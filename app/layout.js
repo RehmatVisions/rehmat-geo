@@ -9,10 +9,11 @@ export const metadata = {
   description: "Lahore-based GEO and AEO consultant. Website audits, AI visibility research and practical content recommendations for businesses.",
   icons: {
     icon: [
-      { url: "/assets/logo.webp", type: "image/webp" }
+      { url: "/favicon.ico", sizes: "32x32", type: "image/png" },
+      { url: "/assets/icon-192.webp", sizes: "192x192", type: "image/webp" }
     ],
     apple: [
-      { url: "/assets/logo.webp", type: "image/webp" }
+      { url: "/apple-icon.webp", sizes: "180x180", type: "image/webp" }
     ]
   }
 };
