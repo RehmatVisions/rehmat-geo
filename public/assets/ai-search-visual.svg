@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="600" viewBox="0 0 860 600" fill="none">
+  <defs>
+    <linearGradient id="surface" x1="72" y1="30" x2="773" y2="570" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDFA"/>
+      <stop offset="1" stop-color="#F5EBDD"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="604" y1="87" x2="756" y2="211" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9A16C"/>
+      <stop offset="1" stop-color="#F36B35"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="858" height="598" rx="34" fill="url(#surface)" stroke="#E6D8C8" stroke-width="2"/>
+  <circle cx="741" cy="111" r="115" fill="url(#accent)" opacity=".16"/>
+  <circle cx="740" cy="111" r="73" fill="url(#accent)" opacity=".22"/>
+  <rect x="48" y="45" width="764" height="64" rx="18" fill="#F8F1E7" stroke="#E9DDCF"/>
+  <circle cx="81" cy="77" r="12" stroke="#BD542B" stroke-width="3"/>
+  <path d="m90 86 9 9" stroke="#BD542B" stroke-linecap="round" stroke-width="3"/>
+  <text x="119" y="83" fill="#6F675F" font-family="Arial, sans-serif" font-size="17">How can people understand a service more clearly?</text>
+  <text x="52" y="158" fill="#BD542B" font-family="Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="2.4">A USEFUL ANSWER STARTS WITH CLARITY</text>
+  <rect x="48" y="181" width="764" height="221" rx="23" fill="#FFFDFA" stroke="#E9DDCF" stroke-width="2"/>
+  <rect x="73" y="207" width="36" height="36" rx="12" fill="#FCE8DB"/>
+  <path d="M91 214v22m-8-11h16" stroke="#BD542B" stroke-linecap="round" stroke-width="2.5"/>
+  <text x="124" y="231" fill="#27231F" font-family="Arial, sans-serif" font-size="18" font-weight="700">A clear, specific explanation</text>
+  <rect x="74" y="265" width="654" height="10" rx="5" fill="#E8E0D6"/>
+  <rect x="74" y="288" width="606" height="10" rx="5" fill="#E8E0D6"/>
+  <rect x="74" y="311" width="518" height="10" rx="5" fill="#E8E0D6"/>
+  <rect x="74" y="349" width="153" height="29" rx="14.5" fill="#F8F1E7"/>
+  <circle cx="91" cy="363.5" r="4" fill="#F36B35"/>
+  <text x="103" y="368" fill="#766D63" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing=".8">HELPFUL DETAIL</text>
+  <rect x="48" y="430" width="764" height="114" rx="22" fill="#F8F1E7" stroke="#E9DDCF"/>
+  <text x="72" y="462" fill="#766D63" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="2">SUPPORTING SOURCES</text>
+  <rect x="72" y="481" width="210" height="39" rx="12" fill="#FFFDFA" stroke="#E5D8C8"/>
+  <circle cx="92" cy="500.5" r="6" fill="#F36B35"/>
+  <text x="108" y="505" fill="#39332D" font-family="Arial, sans-serif" font-size="13" font-weight="600">Clear service page</text>
+  <rect x="297" y="481" width="210" height="39" rx="12" fill="#FFFDFA" stroke="#E5D8C8"/>
+  <circle cx="317" cy="500.5" r="6" fill="#D6A36B"/>
+  <text x="333" y="505" fill="#39332D" font-family="Arial, sans-serif" font-size="13" font-weight="600">Useful answers</text>
+  <rect x="522" y="481" width="266" height="39" rx="12" fill="#FFFDFA" stroke="#E5D8C8"/>
+  <circle cx="542" cy="500.5" r="6" fill="#82796E"/>
+  <text x="558" y="505" fill="#39332D" font-family="Arial, sans-serif" font-size="13" font-weight="600">Evidence readers can verify</text>
+</svg>

@@ -1,0 +1,77 @@
+.testimonials {
+  padding: 90px 6% 100px;
+  background: var(--cream);
+}
+
+.inner {
+  max-width: 1280px;
+  margin: auto;
+}
+
+.heading {
+  max-width: 700px;
+  margin-bottom: 42px;
+}
+
+.heading h2 {
+  margin: 0;
+  font: 700 clamp(38px, 5vw, 60px) / 1.08 Manrope, Arial, sans-serif;
+  letter-spacing: -3px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  color: var(--orange);
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.card blockquote {
+  margin: 20px 0 24px;
+  color: #5f5a54;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.name {
+  margin: auto 0 0;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .testimonials {
+    padding-top: 70px;
+    padding-bottom: 75px;
+  }
+
+  .heading h2 {
+    font-size: 40px;
+    letter-spacing: -2px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,193 @@
+.hero-responsive {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 768px;
+  padding: 141px 8.5% 24px;
+  display: block;
+  background-color: var(--cream);
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.hero-background img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 700px);
+}
+
+.hero-responsive .eyebrow {
+  margin-bottom: 22px;
+  font-size: 11px;
+}
+
+.hero-responsive h1 {
+  max-width: 690px;
+  font-size: clamp(72px, 6.25vw, 100px);
+  line-height: 0.84;
+  letter-spacing: -5.5px;
+}
+
+.hero-responsive .hero-lead {
+  max-width: 610px;
+  margin: 24px 0 28px -6px;
+  padding-left: 19px;
+  border-left: 2px solid var(--orange);
+  color: #5f5e5b;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.hero-responsive .hero-actions {
+  align-items: center;
+  gap: 30px;
+}
+
+.hero-responsive .hero-actions .button-orange {
+  min-height: 48px;
+  padding: 0 21px;
+  gap: 7px;
+  font-size: 13px;
+}
+
+.hero-overview {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.hero-play {
+  display: inline-grid;
+  width: 31px;
+  height: 31px;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 10px;
+  line-height: 1;
+}
+
+body:has(.home-page) .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+body:has(.home-page) .site-header:not(.site-header-scrolled) .site-header-inner {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.hero-background img {
+  object-position: center top;
+}
+
+@media (max-width: 640px) {
+  .hero-responsive {
+    min-height: 680px;
+    height: auto;
+    align-items: start;
+    padding: 112px 6% 50px;
+    display: block;
+  }
+
+  .hero-responsive .eyebrow {
+    margin-bottom: 18px;
+    font-size: 9px;
+  }
+
+  .hero-responsive h1 {
+    max-width: 340px;
+    font-size: clamp(36px, 10vw, 52px);
+    line-height: 0.93;
+    letter-spacing: -2.5px;
+  }
+
+  .hero-responsive .hero-copy {
+    width: 76%;
+    max-width: 420px;
+  }
+
+  .hero-responsive .hero-lead {
+    max-width: 360px;
+    margin: 20px 0 22px -4px;
+    padding-left: 12px;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .hero-responsive .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .hero-responsive .hero-actions .button-orange {
+    min-height: 43px;
+    font-size: 12px;
+  }
+
+  .hero-overview {
+    font-size: 12px;
+  }
+
+  .hero-play {
+    width: 27px;
+    height: 27px;
+  }
+
+  .hero-responsive {
+    padding-bottom: 50px;
+  }
+
+  .hero-background {
+    top: 0;
+  }
+
+  .hero-background img {
+    object-position: left top;
+  }
+}
+
+@media (min-width: 1600px) {
+  .hero-responsive {
+    min-height: 860px;
+    padding: clamp(150px, 14vh, 200px) 9% 50px;
+  }
+
+  .hero-copy {
+    width: min(100%, 850px);
+  }
+
+  .hero-responsive h1 {
+    max-width: 800px;
+    font-size: clamp(92px, 5.6vw, 126px);
+    line-height: 0.88;
+    letter-spacing: -7px;
+  }
+
+  .hero-responsive .hero-lead {
+    max-width: 700px;
+    font-size: clamp(18px, 1.05vw, 21px);
+  }
+}

@@ -1,0 +1,43 @@
+import Link from "next/link";
+import Image from "next/image";
+import {getImageProps} from "next/image";
+import {services,articles,testimonials} from "@/lib/content";
+import styles from "./testimonials.module.css";
+import featureStyles from "./search-band.module.css";
+
+const desktopHeroImage=getImageProps({
+  src:"/assets/hero.webp",
+  width:1672,
+  height:941,
+  alt:"",
+  sizes:"100vw",
+  quality:75
+});
+const mobileHeroImage=getImageProps({
+  src:"/assets/hero-mobile.webp",
+  width:1024,
+  height:1536,
+  alt:"",
+  sizes:"100vw",
+  quality:75
+});
+
+export default function HomePage(){return <div className="home-page">
+<link rel="preload" as="image" href={desktopHeroImage.props.src} imageSrcSet={desktopHeroImage.props.srcSet} imageSizes="100vw" media="(min-width: 641px)" fetchPriority="high"/>
+<link rel="preload" as="image" href={mobileHeroImage.props.src} imageSrcSet={mobileHeroImage.props.srcSet} imageSizes="100vw" media="(max-width: 640px)" fetchPriority="high"/>
+<section className="hero hero-responsive">
+  <picture className="hero-background">
+    <source media="(max-width: 640px)" srcSet={mobileHeroImage.props.srcSet} sizes={mobileHeroImage.props.sizes}/>
+    <Image src="/assets/hero.webp" alt="" width={1672} height={941} sizes="100vw" quality={75} fetchPriority="high" loading="eager" decoding="async"/>
+  </picture>
+  <div className="hero-copy"><p className="eyebrow"><span className="eyebrow-dot"/> GEO · AEO · AI SEARCH</p><h1>Make your business easier to understand in <em>AI search.</em></h1><p className="hero-lead">I review your website, customer questions and how selected AI search engines understand your brand — and turn insights into growth.</p><div className="hero-actions"><Link className="button button-orange" href="/geo-audit">Get your SEO audit <span aria-hidden="true">↗</span></Link><a className="hero-overview" href="https://www.fiverr.com/s/3AeD2ZY" target="_blank" rel="noopener noreferrer"><span className="hero-play" aria-hidden="true">↗</span>Order on Fiverr</a></div></div>
+</section>
+<section className={featureStyles.featureBand}><div className={featureStyles.inner}><div className={featureStyles.copy}><p className={featureStyles.kicker}>SEARCH IS CHANGING <span aria-hidden="true">✳</span></p><h2 className={featureStyles.heading}>MAKE YOUR BRAND <em>UNDERSTOOD</em></h2><p className={featureStyles.tagline}><span aria-hidden="true">✳</span> ANSWER WITH CLARITY</p></div><div className={featureStyles.visual}><Image src="/assets/ai-search-visual.svg" alt="Illustration of a search question, a useful answer and supporting website sources" width={860} height={600} loading="lazy" decoding="async"/></div></div></section>
+<section className="intro-strip wrap"><p className="eyebrow">A practical starting point</p><h2>Start with a website that explains your work clearly—and backs it up with <em>useful information.</em></h2><p>I check whether important pages are accessible, services are easy to distinguish, customer questions receive useful answers and key claims have supporting evidence. Those fundamentals help people first and give search systems clearer information to work with.</p></section>
+<section className="services-home section-pad"><div className="wrap"><div className="section-heading"><div><p className="eyebrow">What I can help with</p><h2>Strategy built for<br/><em>how search evolves.</em></h2></div><Link className="text-link" href="/services">Explore all services ↗</Link></div><div className="home-service-grid">{services.slice(0,6).map(([name,desc],i)=><Link href={i===0?"/geo-audit":"/services"} className="home-service" key={name}><span>0{i+1}</span><h3>{name}</h3><p>{desc}</p><b>↗</b></Link>)}</div></div></section>
+<section className="process-section section-pad"><div className="wrap"><p className="eyebrow">A considered process</p><h2>From uncertainty to<br/><em>a clearer next step.</em></h2><div className="process-grid">{[["01","Audit","Understand the current website, content and discoverability foundations."],["02","Research","Explore customer questions, entities and the competitive context."],["03","Strategy","Prioritize the most useful opportunities and define what to measure."],["04","Implementation","Improve pages, structure and content with a clear rationale."],["05","Measurement","Review documented observations and refine the approach over time."]].map(([n,t,d])=><article key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div></div></section>
+<section className="case-home section-pad"><div className="wrap case-home-inner"><div><p className="eyebrow">Transparent by design</p><h2>Real thinking.<br/><em>Honest evidence.</em></h2><p>Explore a clearly labelled demonstration of how a GEO audit can be structured. No invented client results, performance claims or testimonials.</p><Link className="button button-dark" href="/case-studies">View demonstration ↗</Link></div><div className="case-visual"><div className="case-sheet"><small>DEMONSTRATION / 001</small><b>Discovery<br/>framework</b><div className="case-line"/><span>ACCESSIBILITY · ENTITIES · CONTENT · MEASUREMENT</span></div><div className="case-orange"/></div></div></section>
+<section className={styles.testimonials}><div className={styles.inner}><div className={styles.heading}><p className="eyebrow">Client feedback</p><h2>What clients say about working with me.</h2></div><div className={styles.grid}>{testimonials.map(review=><article className={styles.card} key={review.name}><div className={styles.stars} aria-label={`${review.rating} out of 5 stars`}>{Array.from({length:review.rating},(_,index)=><span key={index}>★</span>)}</div><blockquote>{review.quote}</blockquote><p className={styles.name}>{review.name}</p></article>)}</div></div></section>
+<section className="insights-home section-pad"><div className="wrap"><div className="section-heading"><div><p className="eyebrow">Ideas worth understanding</p><h2>Learn the language<br/>of <em>AI search.</em></h2></div><Link className="text-link" href="/blog">Visit the journal ↗</Link></div><div className="article-grid home-articles">{articles.slice(0,3).map(([slug,title,category,intro])=><article className="article-card" key={slug}><div className="article-meta"><span>{category}</span><span>GUIDE</span></div><h2><Link href={"/blog/"+slug}>{title}</Link></h2><p>{intro}</p><Link className="text-link" href={"/blog/"+slug}>Read article ↗</Link></article>)}</div></div></section>
+<section className="faq-section section-pad"><div className="wrap faq-layout"><div><p className="eyebrow">Good questions</p><h2>What businesses<br/>should know.</h2></div><div className="faq-list"><details open><summary><h2>Can GEO guarantee my business will appear in ChatGPT, Gemini or Google AI Overviews?</h2></summary><p>No. Results vary by query, platform and time. Optimization can make your information clearer and more useful, but no consultant can guarantee a mention, citation or recommendation.</p></details><details><summary><h2>Does GEO replace SEO?</h2></summary><p>No. They overlap. Accessible pages, useful content and clear business information support ordinary search as well as many AI search experiences. GEO adds a focus on how a business is represented in generated answers.</p></details><details><summary><h2>What does a GEO audit include?</h2></summary><p>Depending on scope, it can review key-page accessibility, business and service clarity, content usefulness, and dated observations from an agreed set of AI-search prompts.</p></details><details><summary><h2>How do you measure AI visibility?</h2></summary><p>Use a repeatable set of customer questions and record each platform, test date, brand mention, cited page and answer context. Report the sample and its limits rather than presenting a small test as a universal score.</p></details><details><summary><h2>Does Google require special markup to appear in AI Overviews?</h2></summary><p>Google says there are no additional technical requirements or special structured data for its AI features. Pages still need to meet normal Search eligibility requirements, and inclusion is not guaranteed. <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noreferrer">Read Google’s guidance</a>.</p></details></div></div></section>
+<section className="final-cta"><div className="wrap"><p className="eyebrow">Your next step starts here</p><h2>Make your expertise<br/>easier to <em>discover.</em></h2><Link className="button button-dark" href="/geo-audit">Start with a GEO audit ↗</Link></div><div className="cta-orb"/></section></div>}
