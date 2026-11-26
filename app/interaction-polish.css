@@ -1,3 +1,6 @@
+/* ============================================================
+   SITE HEADER
+   ============================================================ */
 .site-header {
   width: 100%;
   max-width: none;
@@ -8,6 +11,7 @@
   top: 0;
   z-index: 20;
   background: transparent;
+  contain: layout style;
 }
 
 .site-header-inner {
@@ -317,69 +321,216 @@
   }
 }
 
+/* ============================================================
+   SCROLL REVEAL — AOS-STYLE (no library, pure CSS + JS)
+   Different variants applied by data-aos attribute set in JS
+   ============================================================ */
+
+/* Base hidden state */
 [data-scroll-reveal="pending"] {
+  will-change: opacity, transform;
+}
+
+[data-scroll-reveal="pending"][data-aos="fade-up"] {
   opacity: 0;
-  transform: translate3d(0, 18px, 0);
-  transition: opacity 560ms cubic-bezier(0.2, 0.7, 0.3, 1),
-    transform 560ms cubic-bezier(0.2, 0.7, 0.3, 1);
+  transform: translate3d(0, 32px, 0);
+  transition: opacity 680ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 680ms cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: var(--scroll-reveal-delay, 0ms);
 }
 
-[data-scroll-reveal="visible"] {
+[data-scroll-reveal="pending"][data-aos="fade-left"] {
+  opacity: 0;
+  transform: translate3d(40px, 0, 0);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--scroll-reveal-delay, 0ms);
+}
+
+[data-scroll-reveal="pending"][data-aos="fade-right"] {
+  opacity: 0;
+  transform: translate3d(-40px, 0, 0);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--scroll-reveal-delay, 0ms);
+}
+
+[data-scroll-reveal="pending"][data-aos="scale-up"] {
+  opacity: 0;
+  transform: scale3d(0.94, 0.94, 1);
+  transition: opacity 650ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 650ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--scroll-reveal-delay, 0ms);
+}
+
+[data-scroll-reveal="pending"][data-aos="fade-up-sm"] {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  transition: opacity 560ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 560ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--scroll-reveal-delay, 0ms);
+}
+
+/* Visible — all variants snap to natural position */
+[data-scroll-reveal="visible"][data-aos] {
   opacity: 1;
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
 }
 
-.hero-responsive .eyebrow,
-.hero-responsive h1,
-.hero-responsive .hero-lead,
-.hero-responsive .hero-actions,
-.hero-responsive .hero-note {
-  animation: hero-reveal 650ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
-}
+/* ============================================================
+   HERO ENTRANCE ANIMATIONS — Premium staggered reveal
+   ============================================================ */
 
-.hero-responsive h1 {
-  animation-delay: 80ms;
-}
-
-.hero-responsive .hero-lead {
-  animation-delay: 150ms;
-}
-
-.hero-responsive .hero-actions {
-  animation-delay: 220ms;
-}
-
-.hero-responsive .hero-note {
-  animation-delay: 290ms;
-}
-
+/* Background image: subtle zoom-in from slightly zoomed */
 .hero-background img {
-  animation: hero-image-reveal 900ms ease-out both;
+  animation: hero-bg-reveal 1200ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
 }
 
-@keyframes hero-reveal {
+/* Eyebrow — first in, slides + fades */
+.hero-responsive .eyebrow {
+  animation: hero-eyebrow 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 80ms;
+  will-change: opacity, transform;
+}
+
+/* H1 — big staggered entrance, slight upward motion */
+.hero-responsive h1 {
+  animation: hero-heading 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 180ms;
+  will-change: opacity, transform;
+}
+
+/* Orange em word inside h1 — extra pop via clip path reveal */
+.hero-responsive h1 em {
+  display: inline-block;
+  animation: hero-em-reveal 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 420ms;
+  will-change: opacity, transform;
+}
+
+/* Lead paragraph */
+.hero-responsive .hero-lead {
+  animation: hero-lead-in 750ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 320ms;
+  will-change: opacity, transform;
+}
+
+/* CTA buttons row */
+.hero-responsive .hero-actions {
+  animation: hero-actions-in 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 460ms;
+  will-change: opacity, transform;
+}
+
+/* Orange CTA button — small scale bounce */
+.hero-responsive .hero-actions .button-orange {
+  animation: hero-btn-pop 600ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: 580ms;
+}
+
+/* ---- Keyframes ---- */
+
+@keyframes hero-bg-reveal {
+  from {
+    opacity: 0.5;
+    transform: scale3d(1.04, 1.04, 1);
+  }
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes hero-eyebrow {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translate3d(-16px, 0, 0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
-@keyframes hero-image-reveal {
+@keyframes hero-heading {
   from {
-    opacity: 0.65;
-    transform: scale(1.015);
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
   }
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: translate3d(0, 0, 0);
   }
 }
 
+@keyframes hero-em-reveal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0) skewX(-4deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) skewX(0deg);
+  }
+}
+
+@keyframes hero-lead-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hero-actions-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hero-btn-pop {
+  from {
+    opacity: 0.6;
+    transform: scale3d(0.9, 0.9, 1);
+  }
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+/* ============================================================
+   PERFORMANCE — contain layout paint on heavy sections
+   ============================================================ */
+.services-home,
+.process-section,
+.case-home,
+.insights-home,
+.faq-section,
+.final-cta,
+.intro-strip {
+  contain: layout style;
+}
+
+.home-service,
+.article-card,
+.resource-card,
+.service-card {
+  contain: layout style paint;
+}
+
+/* ============================================================
+   REDUCED MOTION — kill all animations/transitions
+   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -390,8 +541,8 @@
     transition-duration: 0.01ms !important;
   }
 
-  [data-scroll-reveal="pending"],
-  [data-scroll-reveal="visible"] {
+  [data-scroll-reveal="pending"][data-aos],
+  [data-scroll-reveal="visible"][data-aos] {
     opacity: 1;
     transform: none;
     transition: none;
