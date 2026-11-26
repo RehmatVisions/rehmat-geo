@@ -52,6 +52,37 @@
 .name {
   margin: auto 0 0;
   font-weight: 700;
+  font-size: 14px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+  flex-wrap: wrap;
+}
+
+.location {
+  font-size: 11px;
+  color: #77716a;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sourceBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 100px;
+  background: #e8f0fb;
+  color: #2a5bbf;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 @media (max-width: 900px) {

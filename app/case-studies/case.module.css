@@ -1,0 +1,712 @@
+/* ============================================================
+   CASE STUDY — Premium editorial layout
+   ============================================================ */
+
+/* ---- Hero / intro ---- */
+.hero {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 90px 6% 80px;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: 100px;
+  background: #fff0e8;
+  color: #b94a20;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.labelDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f36b35;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.3); }
+}
+
+.heroTitle {
+  font-size: clamp(44px, 6vw, 80px);
+  line-height: 1.0;
+  letter-spacing: -4px;
+  margin: 0 0 20px;
+  max-width: 900px;
+  font-weight: 800;
+}
+
+.heroTitle em {
+  font-style: normal;
+  color: #f36b35;
+}
+
+.heroSub {
+  font-size: 17px;
+  line-height: 1.75;
+  color: #6f6962;
+  max-width: 700px;
+  margin: 0 0 44px;
+}
+
+.heroDivider {
+  height: 1px;
+  background: rgba(25, 24, 21, 0.1);
+  margin: 0;
+}
+
+/* ---- Section wrapper ---- */
+.section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 6%;
+}
+
+.sectionAlt {
+  background: #f0ece4;
+}
+
+.sectionDark {
+  background: #191815;
+  color: #fff;
+}
+
+.sectionAltInner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 6%;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #77716a;
+  margin: 0 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eyebrowDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f36b35;
+  display: inline-block;
+}
+
+.eyebrowLight {
+  color: rgba(255,255,255,0.5);
+}
+
+.sectionTitle {
+  font-size: clamp(36px, 4.5vw, 58px);
+  line-height: 1.06;
+  letter-spacing: -3px;
+  margin: 0 0 16px;
+  font-weight: 800;
+}
+
+.sectionTitle em {
+  font-style: normal;
+  color: #f36b35;
+}
+
+.sectionTitleLight {
+  color: #fff;
+}
+
+.sectionLead {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #6f6962;
+  max-width: 680px;
+  margin: 0 0 52px;
+}
+
+.sectionLeadLight {
+  color: rgba(255,255,255,0.65);
+}
+
+/* ---- Project overview meta strip ---- */
+.metaGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(25,24,21,0.1);
+  border: 1px solid rgba(25,24,21,0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 48px;
+}
+
+.metaCell {
+  background: #fffdf9;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.metaLabel {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #f36b35;
+  font-weight: 700;
+}
+
+.metaValue {
+  font-size: 15px;
+  font-weight: 700;
+  color: #191815;
+  line-height: 1.4;
+}
+
+.metaValueSmall {
+  font-size: 13px;
+  color: #6f6962;
+  margin-top: 2px;
+}
+
+/* ---- Challenge cards ---- */
+.challengeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.challengeCard {
+  background: #fffdf9;
+  border: 1px solid #e9e2d8;
+  border-radius: 16px;
+  padding: 28px 30px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.challengeNum {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fff0e8;
+  color: #f36b35;
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.challengeCard h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  letter-spacing: -0.3px;
+}
+
+.challengeCard p {
+  font-size: 13px;
+  color: #716b64;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ---- Strategy roadmap ---- */
+.roadmap {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.roadmapStep {
+  background: #fffdf9;
+  border: 1px solid #e9e2d8;
+  border-radius: 14px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.roadmapNum {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #f36b35;
+  font-weight: 700;
+}
+
+.roadmapStep h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+}
+
+.roadmapStep p {
+  font-size: 11px;
+  color: #716b64;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.roadmapConnector {
+  display: none;
+}
+
+/* ---- Measurement table ---- */
+.measureGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.measureCard {
+  background: #fffdf9;
+  border: 1px solid #e9e2d8;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.measureHeader {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid #e9e2d8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.measureHeader h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.pendingBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: #f4f0e9;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #77716a;
+  text-transform: uppercase;
+}
+
+.pendingDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #c4b89a;
+}
+
+.measureBody {
+  padding: 20px 24px;
+}
+
+.measureRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0ece4;
+}
+
+.measureRow:last-child {
+  border-bottom: none;
+}
+
+.measureRowLabel {
+  font-size: 12px;
+  color: #716b64;
+}
+
+.measureRowValue {
+  font-size: 11px;
+  color: #a39c90;
+  font-style: italic;
+}
+
+.measureNote {
+  margin-top: 32px;
+  padding: 18px 22px;
+  background: #fff8f4;
+  border: 1px solid #f5ddd0;
+  border-radius: 12px;
+  font-size: 12px;
+  color: #8c5840;
+  line-height: 1.65;
+}
+
+/* ---- Platforms panel ---- */
+.platformsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.platformCard {
+  border-radius: 16px;
+  padding: 28px 24px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.platformIcon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.platformCard h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+
+.platformCard p {
+  font-size: 12px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.55);
+  margin: 0;
+}
+
+.platformStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-top: auto;
+}
+
+.platformStatusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+}
+
+/* ---- Top 3 objective ---- */
+.top3Banner {
+  border: 1px solid rgba(243,107,53,0.3);
+  border-radius: 20px;
+  padding: 48px;
+  background: rgba(243,107,53,0.05);
+  margin-bottom: 36px;
+}
+
+.top3Banner h3 {
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin: 0 0 16px;
+  line-height: 1.1;
+}
+
+.top3Banner h3 em {
+  font-style: normal;
+  color: #f36b35;
+}
+
+.top3Banner p {
+  font-size: 14px;
+  color: #716b64;
+  line-height: 1.75;
+  max-width: 700px;
+  margin: 0 0 24px;
+}
+
+.queryGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.queryTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 100px;
+  background: #fffdf9;
+  border: 1px solid #e9e2d8;
+  font-size: 11px;
+  color: #45413c;
+  font-weight: 500;
+}
+
+.queryTagIcon {
+  color: #f36b35;
+  font-style: normal;
+}
+
+.disclaimerBox {
+  background: #fffdf9;
+  border: 1px solid #e9e2d8;
+  border-radius: 14px;
+  padding: 22px 26px;
+  font-size: 12px;
+  color: #716b64;
+  line-height: 1.75;
+}
+
+.disclaimerBox strong {
+  color: #191815;
+}
+
+/* ---- Timeline ---- */
+.timeline {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 160px 1px 1fr;
+  gap: 0 28px;
+  padding-bottom: 36px;
+}
+
+.timelineItem:last-child {
+  padding-bottom: 0;
+}
+
+.timelineLeft {
+  text-align: right;
+  padding-top: 4px;
+}
+
+.timelinePhase {
+  font-size: 11px;
+  font-weight: 700;
+  color: #191815;
+  letter-spacing: -0.2px;
+}
+
+.timelineLine {
+  width: 1px;
+  background: #e2dbd2;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.timelineDot {
+  position: absolute;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #f36b35;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.timelineDotPending {
+  background: #d4ccbf;
+}
+
+.timelineRight {
+  padding-top: 0;
+}
+
+.timelineRight h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  letter-spacing: -0.3px;
+}
+
+.timelineRight p {
+  font-size: 13px;
+  color: #716b64;
+  line-height: 1.65;
+  margin: 0 0 10px;
+}
+
+.statusChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.statusDone {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.statusProgress {
+  background: #fff8e1;
+  color: #f57f17;
+}
+
+.statusPending {
+  background: #f4f0e9;
+  color: #77716a;
+}
+
+.statusDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* ---- Results placeholder ---- */
+.resultsBox {
+  border: 1px dashed rgba(25,24,21,0.2);
+  border-radius: 20px;
+  padding: 64px 48px;
+  text-align: center;
+  margin-top: 48px;
+}
+
+.resultsIcon {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.resultsBox h3 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin: 0 0 12px;
+}
+
+.resultsBox p {
+  font-size: 14px;
+  color: #716b64;
+  line-height: 1.75;
+  max-width: 540px;
+  margin: 0 auto 28px;
+}
+
+.resultsMeta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.resultsMetaItem {
+  padding: 8px 16px;
+  background: #f4f0e9;
+  border-radius: 100px;
+  font-size: 11px;
+  color: #77716a;
+  font-weight: 500;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .roadmap {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .metaGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .metaGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .challengeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .roadmap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .measureGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .platformsRow {
+    grid-template-columns: 1fr;
+  }
+
+  .timelineItem {
+    grid-template-columns: 100px 1px 1fr;
+    gap: 0 18px;
+  }
+
+  .top3Banner {
+    padding: 28px 22px;
+  }
+
+  .resultsBox {
+    padding: 40px 24px;
+  }
+
+  .heroTitle {
+    letter-spacing: -2.5px;
+  }
+}
+
+@media (max-width: 540px) {
+  .hero {
+    padding-top: 60px;
+    padding-bottom: 50px;
+  }
+
+  .roadmap {
+    grid-template-columns: 1fr;
+  }
+
+  .timelineItem {
+    grid-template-columns: 80px 1px 1fr;
+    gap: 0 14px;
+  }
+
+  .timelinePhase {
+    font-size: 10px;
+  }
+
+  .sectionTitle {
+    letter-spacing: -2px;
+  }
+}
