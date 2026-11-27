@@ -2,7 +2,7 @@ import Link from 'next/link';
 import s from './case.module.css';
 
 export const metadata = {
-  title: 'Case Studies | Rehmat Ali',
+  title: 'Case Studies',
   description:
     'A live GEO demonstration project — optimizing my own portfolio website for AI search visibility across ChatGPT, Google Gemini and Perplexity.',
   alternates: { canonical: '/case-studies' },
