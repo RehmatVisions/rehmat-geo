@@ -5,7 +5,8 @@ import styles from './services.module.css';
 
 export const metadata={
   title:'AI Visibility, GEO & AEO Services',
-  description:'AI visibility score audit, ChatGPT and Gemini analysis, GEO and AEO recommendations, and AI-ready content optimization by Rehmat Ali.'
+  description:'AI visibility score audit, ChatGPT and Gemini analysis, GEO and AEO recommendations, and AI-ready content optimization by Rehmat Ali.',
+  alternates:{canonical:'/services'}
 };
 
 const packages=[
