@@ -45,6 +45,9 @@ export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: "Rehmat Ali | GEO, AEO & AI Search Consultant", template: "%s | Rehmat Ali" },
   description: "Lahore-based GEO and AEO consultant. Website audits, AI visibility research and practical content recommendations for businesses.",
+  other: {
+    "google-site-verification": "O8ep_k2HdbdWHR0ORg5Wq5IwwjT8SRD47aEED3CERao"
+  },
   openGraph: {
     type: "website",
     siteName: "Rehmat Geo",
@@ -82,7 +85,7 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Manrope:wght@400;500;600;700;800&display=swap"
         />
         {/* Performance hints */}
-<meta name="google-site-verification" content="O8ep_k2HdbdWHR0ORg5Wq5IwwjT8SRD47aEED3CERao" />
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="x-dns-prefetch-control" content="on" />
         <script
