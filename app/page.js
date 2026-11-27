@@ -30,7 +30,7 @@ export default function HomePage(){return <div className="home-page">
 <section className="hero hero-responsive">
   <picture className="hero-background">
     <source media="(max-width: 640px)" srcSet={mobileHeroImage.props.srcSet} sizes={mobileHeroImage.props.sizes}/>
-    <Image src="/assets/hero.webp" alt="" width={1672} height={941} sizes="100vw" quality={75} fetchPriority="high" loading="eager" decoding="async"/>
+    <Image src="/assets/hero.webp" alt="Rehmat Ali reviewing information on a tablet" width={1672} height={941} sizes="100vw" quality={75} fetchPriority="high" loading="eager" decoding="async"/>
   </picture>
   <div className="hero-copy"><p className="eyebrow"><span className="eyebrow-dot"/> GEO · AEO · AI SEARCH</p><h1>Make your business easier to understand in <em>AI search.</em></h1><p className="hero-lead">I review your website, customer questions and how selected AI search engines understand your brand — and turn insights into growth.</p><div className="hero-actions"><Link className="button button-orange" href="/geo-audit">GEO Audit <span aria-hidden="true">↗</span></Link><a className="hero-overview" href="https://www.fiverr.com/s/3AeD2ZY" target="_blank" rel="noopener noreferrer"><span className="hero-play" aria-hidden="true">↗</span>Order on Fiverr</a></div></div>
 </section>
