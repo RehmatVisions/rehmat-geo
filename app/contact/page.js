@@ -1,7 +1,8 @@
 import PageIntro from '@/components/PageIntro';
 export const metadata={
   title:'Contact',
-  description:'Message Rehmat Ali on Fiverr to discuss an AI visibility audit, GEO or AEO project.'
+  description:'Message Rehmat Ali on Fiverr to discuss an AI visibility audit, GEO or AEO project.',
+  alternates:{canonical:'/contact'}
 };
 export default function Contact(){
   return <>
