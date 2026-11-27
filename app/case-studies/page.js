@@ -5,6 +5,7 @@ export const metadata = {
   title: 'Case Studies | Rehmat Ali',
   description:
     'A live GEO demonstration project — optimizing my own portfolio website for AI search visibility across ChatGPT, Google Gemini and Perplexity.',
+  alternates: { canonical: '/case-studies' },
 };
 
 /* ── small reusable chips ── */
