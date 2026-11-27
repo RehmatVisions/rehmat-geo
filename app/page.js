@@ -1,11 +1,11 @@
-export const metadata = { alternates: { canonical: "/" } };
-
 import Link from "next/link";
 import Image from "next/image";
 import {getImageProps} from "next/image";
 import {services,articles,testimonials} from "@/lib/content";
 import styles from "./testimonials.module.css";
 import featureStyles from "./search-band.module.css";
+
+export const metadata = { alternates: { canonical: "/" } };
 
 const desktopHeroImage=getImageProps({
   src:"/assets/hero.webp",
