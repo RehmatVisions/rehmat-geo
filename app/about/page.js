@@ -5,7 +5,8 @@ import styles from './about.module.css';
 
 export const metadata = {
   title: 'Who is Rehmat Ali?',
-  description: 'Meet Rehmat Ali, a Lahore-based GEO and AEO consultant helping businesses improve how they are understood across AI-powered search.'
+  description: 'Meet Rehmat Ali, a Lahore-based GEO and AEO consultant helping businesses improve how they are understood across AI-powered search.',
+  alternates: { canonical: '/about' }
 };
 
 const questions = [
