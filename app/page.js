@@ -1,3 +1,5 @@
+export const metadata = { alternates: { canonical: "/" } };
+
 import Link from "next/link";
 import Image from "next/image";
 import {getImageProps} from "next/image";
